@@ -1,7 +1,18 @@
+import styles from '../styles/Header.module.scss';
+
 const Header = () => {
   return (
-    <header>
-      <h2>This is Header</h2>
+    <header className={styles.header}>
+      <div className={styles.contents}>
+        <div>로고 위치(This is Header)</div>
+
+        <nav className={styles.navigation}>
+          <ul>
+            <li>알림</li>
+            <li>햄버거</li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 };

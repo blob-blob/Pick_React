@@ -7,8 +7,7 @@ import viteLogo from '../../public/vite.svg';
 function Home() {
   const [count, setCount] = useState(0);
   return (
-    // <DefaultLayout>
-    <>
+    <DefaultLayout>
       <h1>Home</h1>
       <div>
         <a href="https://vitejs.dev" target="_blank">
@@ -27,8 +26,7 @@ function Home() {
         <Link to="/PickList">go to picklist page</Link>
       </div>
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-    </>
-    // </DefaultLayout>
+    </DefaultLayout>
   );
 }
 
