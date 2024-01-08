@@ -23,7 +23,15 @@ function Home() {
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
-        <Link to="/PickList">go to picklist page</Link>
+        <p>
+          <Link to="/PickList">go to picklist page</Link>
+        </p>
+        <p>
+          <Link to="/MyCollection">go to MyCollection page</Link>
+        </p>
+        <p>
+          <Link to="/FollowCollection">go to FollowCollection page</Link>
+        </p>
       </div>
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
     </DefaultLayout>
