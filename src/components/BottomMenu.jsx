@@ -7,10 +7,9 @@ const BottomMenu = () => {
       <div>
         <Link to="/">Home</Link>
       </div>
-      <div>bbbb</div>
-      <div>cccc</div>
-      <div>dddd</div>
-      <div>eeee</div>
+      <div>
+        <Link to="/myinfo">MyPage</Link>
+      </div>
     </div>
   );
 };

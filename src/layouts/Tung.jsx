@@ -1,16 +1,13 @@
-import Header from '../components/Header';
-import BottomMenu from '../components/BottomMenu';
+// 헤더 없는 레이아웃
 import styles from '../styles/Layout.module.scss';
 
 // eslint-disable-next-line react/prop-types
-const DefaultLayout = ({ children }) => {
+const TungLayout = ({ children }) => {
   return (
     <div className={styles.layout}>
-      <Header />
       <main className={styles.main}>{children}</main>
-      <BottomMenu />
     </div>
   );
 };
 
-export default DefaultLayout;
+export default TungLayout;

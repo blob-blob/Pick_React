@@ -1,4 +1,5 @@
-export { default as FollowCollection } from './FollowCollection';
 export { default as Home } from './Home';
-export { default as MyCollection } from './MyCollection';
-export { default as PickList } from './PickList';
+export { default as Myinfo } from './Myinfo';
+
+// 로그인 페이지
+export { default as Login } from './Login';

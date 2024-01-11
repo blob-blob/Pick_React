@@ -1,17 +1,14 @@
 import styles from '../styles/Header.module.scss';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.contents}>
-        <div>로고 위치(This is Header)</div>
-
-        <nav className={styles.navigation}>
-          <ul>
-            <li>알림</li>
-            <li>햄버거</li>
-          </ul>
-        </nav>
+        <nav className={styles.navigation}></nav>
+        <Link to="/login">
+          <span className="text-xl text-gray-10">Login</span>
+        </Link>
       </div>
     </header>
   );
