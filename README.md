@@ -1,4 +1,4 @@
-# Pick! 장소를 공유한다!
+# Pick! 장소를 공유한다 웹 버전
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
