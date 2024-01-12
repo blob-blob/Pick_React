@@ -4,7 +4,7 @@ function Login() {
   return (
     <TungLayout>
       <h1>Login</h1>
-      <div></div>
+      <div className="text-h1">login detail</div>
     </TungLayout>
   );
 }
