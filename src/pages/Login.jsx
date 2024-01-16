@@ -17,11 +17,19 @@ function Login() {
   useEffect(() => {
     initializeNaverLogin();
   }, []);
+  const clientId = import.meta.env.REACT_APP_NAVER_CLIENT_ID;
+  const redirectUri = 'http://localhost:8080/v1/api/login/oauth2/code/naver';
 
   return (
     <TungLayout>
       <h1>LOGIN</h1>
       <div id="naverIdLogin" className="mt-8" />
+      <body>
+        <a
+          href={`https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}`}>
+          Naver Login
+        </a>
+      </body>
     </TungLayout>
   );
 }
