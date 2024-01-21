@@ -6,7 +6,6 @@ function Login() {
     <TungLayout>
       <h1>LOGIN</h1>
       <div className="flex flex-col items-center w-full space-y-4">
-        {/* <div id="naverIdLogin" className="w-[100px] mt-8" /> */}
         <NaverButton />
       </div>
     </TungLayout>
