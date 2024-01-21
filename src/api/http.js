@@ -4,6 +4,7 @@ export const apiClient = axios.create({
   timeout: 10000,
   headers: {
     'Content-type': 'application/json',
+    Authorization: 'accesstoken',
   },
 });
 // 요청 인터셉터 추가
