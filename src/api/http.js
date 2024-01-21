@@ -13,10 +13,6 @@ apiClient.interceptors.request.use();
 apiClient.interceptors.response.use(
   async res => {
     // 응답 데이터
-    const resData = res.data.data;
-    if (resData) {
-      console.log('resData:::', resData);
-    }
     return res;
   },
   async err => {

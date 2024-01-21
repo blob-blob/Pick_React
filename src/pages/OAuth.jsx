@@ -1,7 +1,8 @@
+import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-
 import { setSnsAuth } from '@/api/login';
-import React, { useEffect } from 'react';
+import Cookies from 'js-cookie';
+
 const OAuth = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -11,21 +12,17 @@ const OAuth = () => {
   const code = queryParams.get('code');
 
   useEffect(() => {
-    setSnsAuth({ provider, code })
-      .then(() => {
-        navigate('/');
-      })
-      .catch(error => {
-        console.error('error::', error);
-      });
+    if (Cookies.get('accessToken')) {
+      navigate('/');
+      return;
+    }
+
+    setSnsAuth({ provider, code }).then(() => {
+      navigate('/');
+    });
   }, [provider, code, navigate]);
 
-  return (
-    <div>
-      <p>{`State: ${provider}`}</p>
-      <p>{`Code: ${code}`}</p>
-    </div>
-  );
+  return null;
 };
 
 export default OAuth;
