@@ -1,7 +1,31 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import { defineConfig, loadEnv } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+import { fileURLToPath } from 'url';
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-})
+export default defineConfig(({ mode }) => {
+  loadEnv(mode, process.cwd());
+  return {
+    plugins: [react()],
+    server: {
+      https: false,
+      host: '0.0.0.0',
+      port: 3000,
+      headers: {
+        'Access-Control-Allow-Headers': 'sentry-trace',
+      },
+      // 프록시 설정
+      proxy: {
+        '/v1/api': {
+          target: 'http://dev-pick-backend-env-17.eba-mt3fby3b.ap-northeast-2.elasticbeanstalk.com',
+          changeOrigin: true,
+          rewrite: path => path.replace(/^\/v1\/api/, ''),
+        },
+      },
+    },
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
+      },
+    },
+  };
+});

@@ -3,7 +3,7 @@ import DefaultLayout from '../layouts/Default';
 function Home() {
   return (
     <DefaultLayout>
-      <h1>Home</h1>
+      <h1>Myinfo</h1>
       <div></div>
     </DefaultLayout>
   );
