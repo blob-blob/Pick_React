@@ -1,12 +1,12 @@
 import DefaultLayout from '../layouts/Default';
 
-function Home() {
+const MyInfo = () => {
   return (
     <DefaultLayout>
-      <h1>Myinfo</h1>
+      <h1>MyInfo</h1>
       <div></div>
     </DefaultLayout>
   );
-}
+};
 
-export default Home;
+export default MyInfo;

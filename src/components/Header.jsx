@@ -5,9 +5,9 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.contents}>
-        <nav className={styles.navigation}></nav>
-        <Link to="/login">
-          <span className="text-xl text-gray-10">Login</span>
+        <nav className={styles.navigation}></nav>{' '}
+        <Link to="/myinfo">
+          <span className="text-xl text-gray-10">내정보</span>
         </Link>
       </div>
     </header>
