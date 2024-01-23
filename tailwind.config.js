@@ -13,6 +13,9 @@ module.exports = {
       /** Brand Colors prefix(text-*, bg-*) */
       colors: {
         white: { DEFAULT: '#ffffff' },
+        purple: {
+          DEFAULT: '#9747FF',
+        },
         blue: {
           '01': '#e6f0fe',
           '02': '#cde1fd',

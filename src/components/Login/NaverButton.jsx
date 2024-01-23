@@ -26,7 +26,7 @@ const Naver = () => {
   };
 
   return (
-    <button id="naverIdLogin" onClick={NaverLogin} className="w-[150px] mt-8 bg-green">
+    <button id="naverIdLogin" onClick={NaverLogin} className="w-[150px] mt-8 bg-white">
       네이버 로그인
     </button>
   );
