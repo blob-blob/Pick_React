@@ -1,12 +1,10 @@
 // 로그인 버튼 컴포넌트
 const { naver } = window;
 import React, { useEffect } from 'react';
-const redirectUri = 'http://localhost:3000/oauth';
 
 const initializeNaverLogin = () => {
   const naverLogin = new naver.LoginWithNaverId({
     clientId: `${import.meta.env.VITE_NAVER_CLIENT_ID}`,
-    callbackUrl: redirectUri,
     isPopup: false,
     loginButton: { color: 'green', type: 2, height: 10 },
     callbackHandle: true,
@@ -28,7 +26,7 @@ const Naver = () => {
   };
 
   return (
-    <button id="naverIdLogin" onClick={NaverLogin} className="w-[150px] mt-8 bg-green">
+    <button id="naverIdLogin" onClick={NaverLogin} className="w-[150px] mt-8 bg-white">
       네이버 로그인
     </button>
   );
