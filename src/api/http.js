@@ -4,6 +4,7 @@ export const apiClient = axios.create({
   timeout: 10000,
   headers: {
     'Content-type': 'application/json',
+    Authorization: 'accesstoken',
   },
 });
 // 요청 인터셉터 추가
@@ -12,10 +13,6 @@ apiClient.interceptors.request.use();
 apiClient.interceptors.response.use(
   async res => {
     // 응답 데이터
-    const resData = res.data.data;
-    if (resData) {
-      console.log('resData:::', resData);
-    }
     return res;
   },
   async err => {
