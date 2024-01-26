@@ -5,7 +5,7 @@ import styles from '../styles/Layout.module.scss';
 const DefaultLayout = ({ children }) => {
   return (
     <div className={styles.layout}>
-      <main className={styles.main}>{children}</main>
+      <main>{children}</main>
       <BottomMenu />
     </div>
   );

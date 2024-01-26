@@ -4,22 +4,34 @@ import DefaultLayout from '../layouts/Default';
 function Home() {
   const [selectedTab, setSelectedTab] = useState('collections'); // collections 또는 follows
 
+  const handleKeyDown = (e, tab) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      setSelectedTab(tab);
+    }
+  };
+
   return (
     <DefaultLayout>
       <div className="w-full">
-        <div className="flex flex-col items-start pt-4 pl-4">
-          <button
+        <div className="flex items-start my-4 space-x-8">
+          <div
+            role="button"
+            tabIndex={0}
             className="bg-white focus:outline-none"
             style={{ fontWeight: selectedTab === 'collections' ? 'bold' : 'normal' }}
-            onClick={() => setSelectedTab('collections')}>
+            onClick={() => setSelectedTab('collections')}
+            onKeyDown={e => handleKeyDown(e, 'collections')}>
             내컬렉션
-          </button>
-          <button
+          </div>
+          <div
+            role="button"
+            tabIndex={0}
             className="bg-white focus:outline-none"
             style={{ fontWeight: selectedTab === 'follows' ? 'bold' : 'normal' }}
-            onClick={() => setSelectedTab('follows')}>
+            onClick={() => setSelectedTab('follows')}
+            onKeyDown={e => handleKeyDown(e, 'follows')}>
             팔로우
-          </button>
+          </div>
         </div>
         <div>{selectedTab === 'collections' ? 'collections' : 'follows'}</div>
       </div>
