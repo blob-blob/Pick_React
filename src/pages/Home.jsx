@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import DefaultLayout from '../layouts/Default';
 import { FaPlus } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
-function Home() {
+const Home = () => {
+  const navigate = useNavigate();
   const [selectedTab, setSelectedTab] = useState('collections'); // collections 또는 follows
 
   const handleKeyDown = (e, tab) => {
@@ -14,6 +16,7 @@ function Home() {
   // 컬렉션 추가
   const addCollection = () => {
     console.log('addCollection');
+    navigate('/add/collection');
   };
 
   return (
@@ -49,6 +52,6 @@ function Home() {
       </button>
     </DefaultLayout>
   );
-}
+};
 
 export default Home;
