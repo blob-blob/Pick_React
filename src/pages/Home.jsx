@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import DefaultLayout from '../layouts/Default';
+import { FaPlus } from 'react-icons/fa';
 
 function Home() {
   const [selectedTab, setSelectedTab] = useState('collections'); // collections 또는 follows
@@ -8,6 +9,11 @@ function Home() {
     if (e.key === 'Enter' || e.key === ' ') {
       setSelectedTab(tab);
     }
+  };
+
+  // 컬렉션 추가
+  const addCollection = () => {
+    console.log('addCollection');
   };
 
   return (
@@ -21,7 +27,7 @@ function Home() {
             style={{ fontWeight: selectedTab === 'collections' ? 'bold' : 'normal' }}
             onClick={() => setSelectedTab('collections')}
             onKeyDown={e => handleKeyDown(e, 'collections')}>
-            내컬렉션
+            내 컬렉션
           </div>
           <div
             role="button"
@@ -35,6 +41,12 @@ function Home() {
         </div>
         <div>{selectedTab === 'collections' ? 'collections' : 'follows'}</div>
       </div>
+      {/* 컬렉션 추가 버튼 */}
+      <button
+        onClick={addCollection}
+        className="fixed p-4 bg-gray-200 border-none rounded-full cursor-pointer right-4 bottom-[100px]">
+        <FaPlus size={24} />
+      </button>
     </DefaultLayout>
   );
 }
