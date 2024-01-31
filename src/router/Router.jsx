@@ -1,4 +1,4 @@
-import { Home, MyInfo, Login, OAuth, NotFound } from '@/pages';
+import { Home, MyInfo, Login, OAuth, NotFound, AddCollection, Map } from '@/pages';
 import { Routes, Route } from 'react-router-dom';
 import ProtectedRoutes from './ProtectedRoutes';
 
@@ -8,6 +8,8 @@ export default function Router() {
       {/* { 인증을 반드시 해야지만 접속 가능한 페이지 } */}
       <Route element={<ProtectedRoutes authentication={true} />}>
         <Route path="/" element={<Home />} />
+        <Route path="/add/collection" element={<AddCollection />} />
+        <Route path="/map" element={<Map />} />
         <Route path="/myinfo" element={<MyInfo />} />
       </Route>
 
