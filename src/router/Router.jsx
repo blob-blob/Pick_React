@@ -1,4 +1,4 @@
-import { Home, MyInfo, Login, OAuth, NotFound, AddCollection } from '@/pages';
+import { Home, MyInfo, Login, OAuth, NotFound, AddCollection, Map } from '@/pages';
 import { Routes, Route } from 'react-router-dom';
 import ProtectedRoutes from './ProtectedRoutes';
 
@@ -9,6 +9,7 @@ export default function Router() {
       <Route element={<ProtectedRoutes authentication={true} />}>
         <Route path="/" element={<Home />} />
         <Route path="/add/collection" element={<AddCollection />} />
+        <Route path="/map" element={<Map />} />
         <Route path="/myinfo" element={<MyInfo />} />
       </Route>
 

@@ -11,3 +11,7 @@ export { default as NotFound } from './NotFound';
 
 // 컬렉션 추가
 export { default as AddCollection } from './AddCollection';
+
+// 지도
+
+export { default as Map } from './Map';

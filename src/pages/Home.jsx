@@ -13,40 +13,39 @@ const Home = () => {
     }
   };
 
-  // 컬렉션 추가
-  const addCollection = () => {
-    console.log('addCollection');
-    navigate('/add/collection');
-  };
+  const tabs = [
+    { name: 'collections', label: '내 컬렉션' },
+    { name: 'follows', label: '팔로우' },
+  ];
 
   return (
     <DefaultLayout>
       <div className="w-full">
         <div className="flex items-start my-4 space-x-8">
-          <div
-            role="button"
-            tabIndex={0}
-            className="bg-white focus:outline-none"
-            style={{ fontWeight: selectedTab === 'collections' ? 'bold' : 'normal' }}
-            onClick={() => setSelectedTab('collections')}
-            onKeyDown={e => handleKeyDown(e, 'collections')}>
-            내 컬렉션
-          </div>
-          <div
-            role="button"
-            tabIndex={0}
-            className="bg-white focus:outline-none"
-            style={{ fontWeight: selectedTab === 'follows' ? 'bold' : 'normal' }}
-            onClick={() => setSelectedTab('follows')}
-            onKeyDown={e => handleKeyDown(e, 'follows')}>
-            팔로우
-          </div>
+          {tabs.map((tab, index) => (
+            <div
+              key={index}
+              role="button"
+              tabIndex={0}
+              className="bg-white focus:outline-none"
+              style={{ fontWeight: selectedTab === tab.name ? 'bold' : 'normal' }}
+              onClick={() => setSelectedTab(tab.name)}
+              onKeyDown={e => handleKeyDown(e, tab.name)}>
+              {tab.label}
+            </div>
+          ))}
         </div>
-        <div>{selectedTab === 'collections' ? 'collections' : 'follows'}</div>
+        <div>{selectedTab}</div>
       </div>
+      {/* 지도보기 버튼 */}
+      <button
+        onClick={() => navigate('/map')}
+        className="absolute px-4 py-2 transform -translate-x-1/2 bg-gray-300 rounded-full bottom-[100px] left-1/2">
+        지도로 보기
+      </button>
       {/* 컬렉션 추가 버튼 */}
       <button
-        onClick={addCollection}
+        onClick={() => navigate('/add/collection')}
         className="fixed p-4 bg-gray-200 border-none rounded-full cursor-pointer right-4 bottom-[100px]">
         <FaPlus size={24} />
       </button>
