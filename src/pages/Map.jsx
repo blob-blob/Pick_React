@@ -29,8 +29,8 @@ function AddCollection() {
   return (
     <DefaultLayout>
       <div className="w-full">
-        <div className="flex justify-around my-4">
-          <div id="map" style={{ width: '100vh', height: '100vh' }} />
+        <div className="fixed top-0 left-0">
+          <div id="map" style={{ width: '100vh', height: 'calc(100vh - 80px)', position: 'absolute', top: 0 }} />
         </div>
       </div>
       {/* 지도보기 버튼 */}
