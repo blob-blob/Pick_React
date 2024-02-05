@@ -4,14 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 const { naver } = window;
 
-// window.addEventListener(
-//   'mousewheel',
-//   function () {
-//     // 이벤트 핸들러의 코드
-//     console.log('mousewheel');
-//   },
-//   { passive: true },
-// );
 function AddCollection() {
   const navigate = useNavigate();
   const mapElement = useRef(null);
