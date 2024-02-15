@@ -4,9 +4,11 @@ import NaverButton from '../components/Login/NaverButton';
 function Login() {
   return (
     <TungLayout>
-      <h1 className="flex justify-center italic font-bold text-purple mt-11">Pick</h1>
-      <div className="flex flex-col items-center w-full space-y-4">
-        <NaverButton />
+      <div className="flex flex-col items-center justify-between min-h-screen py-6">
+        <h1 className="self-center mt-[40%] italic font-bold text-purple">Pick</h1>
+        <div className="mb-12">
+          <NaverButton />
+        </div>
       </div>
     </TungLayout>
   );

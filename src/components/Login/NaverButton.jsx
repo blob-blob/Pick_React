@@ -6,7 +6,7 @@ const initializeNaverLogin = () => {
   const naverLogin = new naver.LoginWithNaverId({
     clientId: `${import.meta.env.VITE_NAVER_CLIENT_ID}`,
     isPopup: false,
-    loginButton: { color: 'green', type: 2, height: 10 },
+    loginButton: { color: 'green', type: 3, height: 58 },
     callbackHandle: true,
   });
   naverLogin.init();
@@ -26,7 +26,7 @@ const Naver = () => {
   };
 
   return (
-    <button id="naverIdLogin" onClick={NaverLogin} className="w-[150px] mt-8 bg-white">
+    <button id="naverIdLogin" onClick={NaverLogin} className="max-w-[390px] min-w-[270px] mt-8 bg-white">
       네이버 로그인
     </button>
   );
