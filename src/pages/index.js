@@ -1,6 +1,6 @@
 // 홈, 마이페이지
 export { default as Home } from './Home.jsx';
-export { default as MyInfo } from './MyInfo.jsx';
+export { default as MyInfo } from './MyInfo/Index';
 
 // 로그인 페이지
 export { default as Login } from './Login.jsx';
