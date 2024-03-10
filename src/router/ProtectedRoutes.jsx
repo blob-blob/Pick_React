@@ -4,8 +4,10 @@ import Cookies from 'js-cookie';
 
 function PrivateRoute({ authentication }) {
   const isAuthenticated = Cookies.get('accessToken');
-
-  if (authentication) {
+  const isFirstVisit = !Cookies.get('firstVisit');
+  if (isAuthenticated && isFirstVisit) {
+    return <Navigate to="/welcome" />;
+  } else if (authentication) {
     return !isAuthenticated ? <Navigate to="/login" /> : <Outlet />;
   } else {
     return !isAuthenticated ? <Outlet /> : <Navigate to="/" />;
