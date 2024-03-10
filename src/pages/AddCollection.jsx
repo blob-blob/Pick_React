@@ -24,28 +24,29 @@ function AddCollection() {
       <div className="w-full ">
         <div className="flex items-center justify-between my-2">
           <div className="text-xl font-bold">컬렉션 장소 추가</div>
-          <Button icon="pi pi-times" aria-label="Close" onClick={() => navigate.goBack()} />
+          <Button icon="pi pi-times" aria-label="Close" onClick={() => navigate(-1)} />
         </div>
         <div className="mt-10 mb-2">
           <label htmlFor="place">장소명을 입력해주세요.</label>
-          <InputText id="place" placeholder="장소명을 입력해주세요." className="w-full p-2" />
+          <InputText
+            id="place"
+            placeholder="장소명을 입력해주세요."
+            className="w-full p-2 mt-2 border border-gray-400"
+          />
         </div>
-        <Button label="주소 검색하기" className="p-2 my-2 w-fit" size="small" />
+        <Button label="주소 검색하기" className="p-2 my-2 border w-fit " size="small" />
         <Dropdown
           value={null}
           options={categories}
           onChange={e => console.log(e.value)}
           placeholder="장소의 카테고리를 선택해 주세요"
-          className="w-full p-2 my-2"
+          className="w-full my-2 border"
         />
         <div className="my-4">
-          <Checkbox inputId="binary" checked={checked} onChange={e => setChecked(e.checked)} />
+          <Checkbox inputId="binary" checked={checked} onChange={e => setChecked(e.checked)} className="border" />
           <label htmlFor="binary" className="ml-2 p-checkbox-label">
             이미지를 공개할게요
           </label>
-        </div>
-        <div className="my-4">
-          {/* 이미지 선택 구현 부분은 프로젝트 요구 사항에 따라 다를 수 있으므로 여기서는 생략합니다. */}
         </div>
       </div>
       <div className="fixed w-full bottom-8 text-title-3">
