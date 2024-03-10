@@ -6,6 +6,9 @@ export { default as MyInfo } from './MyInfo/Index';
 export { default as Login } from './Login.jsx';
 export { default as OAuth } from './OAuth.jsx';
 
+// 첫 방문
+export { default as Welcome } from './Welcome.jsx';
+
 // 404 not found
 export { default as NotFound } from './NotFound.jsx';
 
