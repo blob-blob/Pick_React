@@ -27,4 +27,8 @@ jobs:
       - name: Upload to S3
         run: aws s3 cp --region ap-northeast-2 ./build.zip s3://react-frontend-bucket/build.zip
       - name: Deploy
-        run: aws deploy create-deployment --application-name pick-react --deployment-config-name CodeDeployDefault.AllAtOnce --deployment-group-name pick-react --s3-location bucket=react-frontend-bucket,bundleType=zip,key=build.zip
+        run: aws deploy create-deployment
+          --application-name pick-react
+          --deployment-config-name CodeDeployDefault.AllAtOnce
+          --deployment-group-name pick-react-group
+          --s3-location bucket=react-frontend-bucket,bundleType=zip,key=build.zip
